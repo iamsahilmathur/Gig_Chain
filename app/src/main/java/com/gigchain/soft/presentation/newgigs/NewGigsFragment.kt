@@ -15,6 +15,7 @@ class NewGigsFragment : BaseFragment<FragmentNewGigsBinding, NewGigsViewModel>()
     private val newGigViewModel: NewGigsViewModel by viewModels()
     private lateinit var newGigsAdapter: NewGigsAdapter
 
+    // setting up views
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupViews()
@@ -22,29 +23,35 @@ class NewGigsFragment : BaseFragment<FragmentNewGigsBinding, NewGigsViewModel>()
         setMapView(getBinding().mapView.id)
     }
 
+    // setting up Layout Id
     override fun getLayoutId(): Int {
         return R.layout.fragment_new_gigs
     }
 
+    // setting up slider
     private fun setupViews() {
         newGigsAdapter = NewGigsAdapter(requireContext())
         getBinding().viewPager2.adapter = newGigsAdapter
     }
 
-
+    // setting up binding variable
     override fun getBindingVariable(): Int {
         return BR.newGigsVM
     }
 
+    // click events
     private fun clickEvents() {
 
         getBinding().apply {
+            // viewpager forward
             imageViewForward.setSafeOnClickListener {
                 viewPager2.currentItem = viewPager2.currentItem + 1
             }
+            // viewpager backward
             imageViewPrevious.setSafeOnClickListener {
                 viewPager2.currentItem = viewPager2.currentItem - 1
             }
+            // replacing MapView with ListView
             cardViewList.setSafeOnClickListener {
                 replaceFragment(NewGigsListViewFragment(), conataner.id)
             }
@@ -54,7 +61,7 @@ class NewGigsFragment : BaseFragment<FragmentNewGigsBinding, NewGigsViewModel>()
     }
 
 
-
+    // setting up ViewModel instance
     override fun getViewModel(): NewGigsViewModel {
         return newGigViewModel
     }

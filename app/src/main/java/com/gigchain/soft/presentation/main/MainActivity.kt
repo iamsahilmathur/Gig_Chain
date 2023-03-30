@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var mainBinding: ActivityMainBinding
 
+    // setting up views
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         val fragList = generateViewList()
         val viewPagerAdapter = MainViewPagerAdapter(this, fragList)
 
+        // init TabViews
         mainBinding.apply {
             pager.adapter = viewPagerAdapter
             TabLayoutMediator(
@@ -35,14 +37,11 @@ class MainActivity : AppCompatActivity() {
                 setTabTitle(tab, position)
 
             }.attach()
-            shimmerViewContainer.stopShimmerAnimation()
-            shimmerViewContainer.visibility = View.GONE
         }
-
 
     }
 
-
+    // setting up Tab names
     private fun setTabTitle(tab: TabLayout.Tab, pos: Int) {
         var title = ""
         title = when (pos) {
@@ -53,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         tab.text = title
     }
 
-
+    // creating fragment list
     private fun generateViewList(): List<Fragment> {
         val fragmentList = mutableListOf<Fragment>()
         fragmentList.add(HomeFragment())
@@ -62,14 +61,4 @@ class MainActivity : AppCompatActivity() {
         return fragmentList
     }
 
-
-    override fun onResume() {
-        super.onResume()
-        mainBinding.shimmerViewContainer.startShimmerAnimation()
-    }
-
-    override fun onPause() {
-        mainBinding.shimmerViewContainer.stopShimmerAnimation()
-        super.onPause()
-    }
 }

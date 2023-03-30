@@ -16,7 +16,7 @@ class CurrentGigsFragment : BaseFragment<FragmentCurrentGigsBinding, CurrentGigs
     private val currentGigsViewModel: CurrentGigsViewModel by viewModels()
     private lateinit var currentGigsAdapter: CurrentGigsAdapter
 
-
+    // Setting up views
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupViews()
@@ -24,12 +24,13 @@ class CurrentGigsFragment : BaseFragment<FragmentCurrentGigsBinding, CurrentGigs
         setMapView(getBinding().mapView.id)
     }
 
+    // Slider view set up
     private fun setupViews() {
         currentGigsAdapter = CurrentGigsAdapter(requireContext())
         getBinding().viewPager2.adapter = currentGigsAdapter
     }
 
-
+   // Click Events
     private fun clickEvents() {
 
         getBinding().apply {
@@ -47,15 +48,17 @@ class CurrentGigsFragment : BaseFragment<FragmentCurrentGigsBinding, CurrentGigs
 
     }
 
-
+   // setting up layout id
     override fun getLayoutId(): Int {
         return R.layout.fragment_current_gigs
     }
 
+    // setting up ViewModel instance
     override fun getViewModel(): CurrentGigsViewModel {
         return currentGigsViewModel
     }
 
+    // setting up ViewModel binding variable
     override fun getBindingVariable(): Int {
         return BR.currentGigsVM
     }

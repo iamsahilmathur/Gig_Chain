@@ -12,6 +12,8 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
 class DrawMarker internal constructor(private val context: Context) {
+
+    // draw marker on maps
     fun draw(googleMap: GoogleMap, location: LatLng?, resDrawable: Int, title: String?) {
         val circleDrawable = ContextCompat.getDrawable(
             context, resDrawable
@@ -39,10 +41,13 @@ class DrawMarker internal constructor(private val context: Context) {
         return BitmapDescriptorFactory.fromBitmap(bitmap)
     }
 
+    // creating singleton
     companion object {
         var INSTANCE: DrawMarker? = null
         fun getInstance(context: Context): DrawMarker? {
+            if(INSTANCE == null)
             INSTANCE = DrawMarker(context)
+
             return INSTANCE
         }
     }

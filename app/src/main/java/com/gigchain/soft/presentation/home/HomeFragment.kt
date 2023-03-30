@@ -13,25 +13,29 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(), View.On
 
     private val homeViewModel: HomeViewModel by viewModels()
 
-
+    // View is setting up
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getBinding().goImg.setOnClickListener(this)
         getBinding().stopCL.setOnClickListener(this)
     }
 
+    // setting up Layout Id
     override fun getLayoutId(): Int {
         return R.layout.fragment_home
     }
 
+    // setting up ViewModel instance
     override fun getViewModel(): HomeViewModel {
         return homeViewModel
     }
 
+    // setting up binding variable
     override fun getBindingVariable(): Int {
         return BR.homeViewModel
     }
 
+    // Click events
     override fun onClick(p0: View?) {
         getBinding().apply {
             when (p0) {

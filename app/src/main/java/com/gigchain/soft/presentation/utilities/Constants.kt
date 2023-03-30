@@ -1,5 +1,6 @@
 package com.gigchain.soft.presentation.utilities
 
+/* Defied app constants */
 object Constants {
 
     const val HOME_TITLE_CONSTANT = "Home"

@@ -31,7 +31,7 @@ abstract class BaseFragment<V : ViewDataBinding, VM : ViewModel> : Fragment(), O
     private var googleMap: GoogleMap? = null
     private var mapFragment: SupportMapFragment? = null
 
-
+     // Creating Databinding instance and binding ViewModel to binding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? = DataBindingUtil.inflate<V>(layoutInflater, getLayoutId(), container, false).also {
@@ -39,17 +39,22 @@ abstract class BaseFragment<V : ViewDataBinding, VM : ViewModel> : Fragment(), O
         mBinding = it
     }.root
 
+    // return binding instance
     fun getBinding(): V {
         return mBinding
     }
 
+    // getting layout Id
     @LayoutRes
     abstract fun getLayoutId(): Int
 
+    // getting ViewModel instance
     abstract fun getViewModel(): VM
 
+    // getting Binding variable of ViewModel
     abstract fun getBindingVariable(): Int
 
+    // replace fragments
     open fun replaceFragment(someFragment: Fragment?, id: Int) {
         val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
         transaction.setCustomAnimations(R.anim.anim_in_test, R.anim.anim_out_test)
@@ -60,10 +65,12 @@ abstract class BaseFragment<V : ViewDataBinding, VM : ViewModel> : Fragment(), O
         transaction.commit()
     }
 
+    // return map instance
     fun getMap(): GoogleMap? {
         return googleMap
     }
 
+    // Map creation
     override fun onMapReady(googleMap: GoogleMap?) {
         this.googleMap = googleMap
         googleMap?.setMapStyle(
@@ -95,7 +102,7 @@ abstract class BaseFragment<V : ViewDataBinding, VM : ViewModel> : Fragment(), O
 
     }
 
-
+     // setting up map
     fun setMapView(containerId: Int) {
         try {
             mapFragment = SupportMapFragment.newInstance()

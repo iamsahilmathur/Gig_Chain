@@ -8,7 +8,9 @@ import androidx.lifecycle.Observer
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
-
+/*
+* This class auto clears binding references when destroy gets called
+* */
 class AutoCleanedValue<T : Any>(
     fragment: Fragment, private val initializer: (() -> T)?
 ) : ReadWriteProperty<Fragment, T> {

@@ -12,6 +12,8 @@ import com.gigchain.soft.domain.models.NewGigsModel
 
 class CurrentGigsListViewAdapter(var context: Context, var gigsList: ArrayList<NewGigsModel>) :
     RecyclerView.Adapter<CurrentGigsListViewAdapter.CurrentGigsListViewRowViewHolder>() {
+
+    // Creating views
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -23,20 +25,25 @@ class CurrentGigsListViewAdapter(var context: Context, var gigsList: ArrayList<N
         return CurrentGigsListViewRowViewHolder(binding)
     }
 
+    // Bind data with View
     override fun onBindViewHolder(holder: CurrentGigsListViewRowViewHolder, position: Int) {
         holder.bind(gigsList[position])
     }
 
+    // Item count
     override fun getItemCount(): Int {
         return gigsList.size
     }
 
+    // Add data to list and update RecyclerView
     fun submitList(it: List<NewGigsModel>) {
         gigsList.clear()
         gigsList.addAll(it)
         notifyDataSetChanged()
     }
 
+
+    // ViewHolder class
     class CurrentGigsListViewRowViewHolder(private val itemBinding: ItemCurrentGigsListViewBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
         fun bind(item: NewGigsModel) {

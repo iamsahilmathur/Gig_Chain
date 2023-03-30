@@ -12,6 +12,8 @@ import com.gigchain.soft.domain.models.NewGigsModel
 
 class NewGigsAdapter(var context: Context) :
     RecyclerView.Adapter<NewGigsAdapter.QuestionOptionsRowViewHolder>() {
+
+    // setting up views
     override fun onCreateViewHolder(
         parent: ViewGroup, viewType: Int
     ): QuestionOptionsRowViewHolder {
@@ -21,19 +23,18 @@ class NewGigsAdapter(var context: Context) :
         return QuestionOptionsRowViewHolder(binding)
     }
 
+    // bind data with view
     @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: QuestionOptionsRowViewHolder, position: Int) {
-//        holder.bind(optionsArrayList[position])
     }
 
+     // Item count
     override fun getItemCount(): Int {
         return 10
     }
 
+    // ViewHolder class
     class QuestionOptionsRowViewHolder(private val itemBinding: ItemNewGigsBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
-        fun bind(item: NewGigsModel) {
-            //  itemBinding.options.text = item.name
-        }
     }
 }

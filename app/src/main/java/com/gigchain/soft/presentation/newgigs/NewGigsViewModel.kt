@@ -16,6 +16,7 @@ class NewGigsViewModel : ViewModel() {
         fetchGigsList()
     }
 
+    // creating data
     private fun fetchGigsList() {
         val gig = NewGigsModel("Shop Onboarding", R.drawable.new_gigs_bg, "Nehru Place", "#4B48E1")
         val gig2 =

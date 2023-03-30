@@ -19,7 +19,7 @@ class CurrentGigsListViewFragment :
     private val newGigViewModel: CurrentGigsViewModel by viewModels()
     lateinit var newGigsListViewAdapter: CurrentGigsListViewAdapter
 
-
+    // Setting up views
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupViews()
@@ -27,23 +27,28 @@ class CurrentGigsListViewFragment :
         clickEvents()
     }
 
+    // setting up layout id
     override fun getLayoutId(): Int {
         return R.layout.fragment_current_gigs_listview
     }
 
+    // RecyclerView setting up
     private fun setupViews() {
         newGigsListViewAdapter = CurrentGigsListViewAdapter(requireContext(), ArrayList())
         getBinding().recyclerViewGigs.adapter = newGigsListViewAdapter
     }
 
+    // setting up ViewModel instance
     override fun getViewModel(): CurrentGigsViewModel {
         return newGigViewModel
     }
 
+    // setting up ViewModel binding variable
     override fun getBindingVariable(): Int {
         return BR.currentGigsVM
     }
 
+    // getting data from ViewModel and updating RecyclerView
     private fun setObserver() {
         lifecycleScope.launch {
             newGigViewModel.gigsList.collect {
@@ -52,6 +57,7 @@ class CurrentGigsListViewFragment :
         }
     }
 
+    // Handling backpress for fragments and Activity
     @Override
     fun onBackPressed() {
         if (parentFragmentManager.backStackEntryCount > 0) {
@@ -61,6 +67,7 @@ class CurrentGigsListViewFragment :
         }
     }
 
+    // BackPress for Fragment
     private fun clickEvents() {
         getBinding().cardView.setSafeOnClickListener {
             onBackPressed()

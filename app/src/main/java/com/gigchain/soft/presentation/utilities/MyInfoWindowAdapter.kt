@@ -8,9 +8,13 @@ import android.widget.TextView
 import com.gigchain.soft.R
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.Marker
-
+/*
+*
+*  Modify marker icons on maps
+* */
 class MyInfoWindowAdapter(mContext: Context) : GoogleMap.InfoWindowAdapter {
     var mWindow: View = LayoutInflater.from(mContext).inflate(R.layout.layout_marker, null)
+
 
     private fun setInfoWindowText(marker: Marker) {
         val title = marker.title
