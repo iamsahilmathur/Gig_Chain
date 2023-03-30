@@ -67,8 +67,7 @@
                             android:drawableStart="@drawable/ic_location"
                             android:drawablePadding="@dimen/dp_5"
                             android:text="Nehru Place"
-                            app:layout_constraintEnd_toStartOf="@+id/guideline"
-                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/g2"
                             app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2" />
 
                         <androidx.appcompat.widget.AppCompatTextView
@@ -119,9 +118,17 @@
 
                         </androidx.appcompat.widget.AppCompatTextView>
 
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/g2"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent=".01"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/accept"
                             style="@style/textView.SubTitle"
+                            app:layout_constraintStart_toEndOf="@id/g2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dp_5"
@@ -136,7 +143,6 @@
                             android:textColor="@color/white"
                             android:textSize="@dimen/sp_12"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="@+id/appCompatTextView4"
                             app:layout_constraintTop_toBottomOf="@+id/appCompatTextView4">
 
                         </androidx.appcompat.widget.AppCompatTextView>
@@ -150,7 +156,7 @@
                             android:drawableStart="@drawable/ic_money"
                             android:drawablePadding="@dimen/dp_5"
                             android:text="500"
-                            app:layout_constraintStart_toStartOf="@+id/textViewLocation"
+                            app:layout_constraintStart_toEndOf="@id/g2"
                             app:layout_constraintTop_toBottomOf="@+id/textViewLocation" />
 
                         <androidx.constraintlayout.widget.Guideline

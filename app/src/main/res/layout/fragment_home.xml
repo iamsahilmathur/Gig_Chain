@@ -52,6 +52,20 @@
                     android:orientation="horizontal"
                     app:layout_constraintGuide_percent=".3" />
 
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/g8"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".99" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/g9"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".36" />
+
 
                 <ImageView
                     android:id="@+id/goImg"
@@ -66,23 +80,23 @@
                     android:id="@+id/handImg"
                     android:layout_width="30dp"
                     android:layout_height="24.06dp"
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginLeft="10dp"
                     android:src="@drawable/hand"
-                    app:layout_constraintStart_toEndOf="@id/goImg"
+                    app:layout_constraintEnd_toStartOf="@id/g9"
                     app:layout_constraintTop_toBottomOf="@id/g5" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/poppins_semibold"
                     android:text="@string/go_live_to_"
                     android:textColor="#9A9A9A"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toEndOf="@id/handImg"
+                    android:textSize="@dimen/_10ssp"
+                    android:layout_marginLeft="6dp"
+                    app:layout_constraintEnd_toStartOf="@id/g8"
+                    app:layout_constraintStart_toEndOf="@id/g9"
                     app:layout_constraintTop_toBottomOf="@id/g5" />
-
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -227,7 +241,7 @@
                         android:fontFamily="@font/poppins_semibold"
                         android:text="@string/earnings_re"
                         android:textColor="#2E2E2E"
-                        android:textSize="12sp"
+                        android:textSize="@dimen/_8ssp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
@@ -285,7 +299,7 @@
                         android:fontFamily="@font/poppins_semibold"
                         android:text="Earnings To Received"
                         android:textColor="#2E2E2E"
-                        android:textSize="12sp"
+                        android:textSize="@dimen/_8ssp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
