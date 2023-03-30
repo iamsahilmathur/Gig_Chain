@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">GigChain</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="go_live_to_">Go Live to start Receiving \n \t\t\t\tNew Gigs</string>
+    <string name="you_are_liv">You are Live!</string>
+    <string name="you_are_receiving">You are receiving new tasks now!</string>
+    <string name="earnings_re">Earnings Received</string>
+    <string name="quick_actio">Quick Actions (2)</string>
+    <string name="finish_gig_">Finish Gig \n  ID 12345</string>
+    <string name="incoming_gi">Incoming Gigs (10)</string>
+    <string name="view_and_ac">View and Accept New  \n Incoming Gigs</string>
+    <string name="accepted_gi">Accepted Gigs (5)</string>
+    <string name="take_action">Take Action on Current \nAccepted Gigs</string>
+    <string name="help">Help</string>
+    <string name="sos">SOS</string>
+    <string name="about_us">About US</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
+    <string name="ok">Ok</string>
+    <string name="how_are_you_text">How are you ?\nHere are 10 new Gigs for you</string>
+    <string name="api_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBbk8eRO5D1UC8CgMfnp046MnaMnFgKB6A</string>
+    <string name="start_gig">Start Gig</string>
+    <string name="proof">Proof</string>
+    <string name="cancel">Cancel</string>
+    <string name="accepted">Accepted</string>
+    <string name="user_name">Hi Soban</string>
+</resources>

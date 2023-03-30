@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#2951D5</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background">#dddddd</color>
+    <color name="green">#26A65E</color>
+    <color name="red">#D52020</color>
+    <color name="purple_color">#BF694AEE</color>
+    <color name="blue">#4B48E1</color>
+    <color name="newGigsTitleColor">#2E2E2E</color>
+    <color name="newGigsSubTitleColor">#808080</color>
+    <color name="colorGreen">#5FC661</color>
+    <color name="darkRed">#EF5C5C</color>
+    <color name="mapLineColor">#2951D5</color>
+    <color name="lightRed">#80EA2525</color>
+    <color name="lightGreen">#8029B32C</color>
+    <color name="FragmentBg">#FFF</color>
+</resources>
